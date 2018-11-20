@@ -1,6 +1,8 @@
 type Query {
     house(name: String): House
     wizard(name: String): Wizard
+
+    accio(item: String): String
 }
 
 type Mutation {

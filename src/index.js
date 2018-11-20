@@ -1,12 +1,20 @@
 const { GraphQLServer } = require('graphql-yoga')
+const fetch = require('node-fetch')
 const db = require('./wizard-db')
 
+const ACCIO_URL = 'https://api.github.com/search/repositories?q='
 const inchToCentimeter = (inches) => 2.54 * inches
 
 const resolvers = {
   Query: {
     house: (_, args) => db.houseByName(args.name),
     wizard: (_, args) => db.wizardByName(args.name),
+
+    accio: (_, args) =>
+      fetch(ACCIO_URL + args.item)
+        .then((res) => res.json())
+        .then((json) => json.items[0])
+        .then((item) => item.html_url)
   },
 
   Mutation: {
