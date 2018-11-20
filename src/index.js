@@ -16,9 +16,15 @@ const resolvers = {
   },
 
   Wizard: {
-    wand: () => null, // TODO
+    name: (wizard) => wizard.name,
+    house: (wizard) => db.Houses[wizard.house],
+    wand: (wizard) => null, // TODO
+
+    totalChocolateFrogCards: (wizard) =>
+      wizard.totalChocolateFrogCards,
+
     friends: (wizard) =>
-      wizard.friends.map((friend) => db.Wizards[friend])
+      wizard.friends.map((friend) => db.Wizards[friend]),
   },
 
   Wand: {
