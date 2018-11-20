@@ -55,6 +55,36 @@ let Wands = [
     wood: "Cedar",
     core: "Dragon heartstring",
     length: 10.25
+  },
+  {
+    wood: "Holly",
+    core: "Phoenix feather",
+    length: 11
+  },
+  {
+    wood: "Vine",
+    core: "Dragon heartstring",
+    length: 10.75
+  },
+  {
+    wood: "Willow",
+    core: "Unicorn tail hair",
+    length: 14
+  },
+  {
+    wood: "Elder",
+    core: "Thestral tail hair",
+    length: 15
+  },
+  {
+    wood: "Hawthorn",
+    core: "Unicorn tail hair",
+    length: 10
+  },
+  {
+    wood: "Yew",
+    core: "Phoenix feather",
+    length: 13.5
   }
 ]
 
@@ -64,7 +94,7 @@ let Wizards = [
     house: 0,
     wand: 0,
     totalChocolateFrogCards: 4,
-    friends: [],
+    friends: [7],
   },
   {
     name: "Pomona Sprout",
@@ -87,6 +117,62 @@ let Wizards = [
     totalChocolateFrogCards: 1,
     friends: [],
   },
+  {
+    name: "Harry Potter",
+    house: 0,
+    wand: 2,
+    totalChocolateFrogCards: 54,
+    friends: [5, 6, 7],
+  },
+  {
+    name: "Hermione Granger",
+    house: 0,
+    wand: 3,
+    totalChocolateFrogCards: 2,
+    friends: [4, 6],
+  },
+  {
+    name: "Ronald Weasley",
+    house: 0,
+    wand: 4,
+    totalChocolateFrogCards: 96,
+    friends: [4, 5],
+  },
+  {
+    name: "Albus Dumbledore",
+    house: 0,
+    wand: 5,
+    totalChocolateFrogCards: 101,
+    friends: [0, 4],
+  },
+  {
+    name: "Draco Malfoy",
+    house: 3,
+    wand: 6,
+    totalChocolateFrogCards: 39,
+    friends: [9, 10, 11],
+  },
+  {
+    name: "Vincent Crabbe",
+    house: 3,
+    wand: null,
+    totalChocolateFrogCards: 27,
+    friends: [8, 10],
+  },
+  {
+    name: "Gregory Goyle",
+    house: 3,
+    wand: null,
+    totalChocolateFrogCards: 43,
+    friends: [8, 9],
+  },
+  {
+    name: "Tom Riddle",
+    house: 3,
+    wand: 7,
+    totalChocolateFrogCards: 0,
+    friends: [8],
+  }
 ]
 
 const houseByName = (name) =>
