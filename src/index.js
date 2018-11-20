@@ -9,6 +9,15 @@ const resolvers = {
     wizard: (_, args) => db.wizardByName(args.name),
   },
 
+  Mutation: {
+    grantPoints: (_, args) => {
+      let house = db.houseByName(args.house)
+      if (house)
+        house.points += args.points
+      return house
+    }
+  },
+
   House: {
     name: (house) => house.name,
     animal: (house) => house.animal,

@@ -3,6 +3,10 @@ type Query {
     wizard(name: String): Wizard
 }
 
+type Mutation {
+  grantPoints(house: String, points: Int): House
+}
+
 type House {
     name: String
     animal: String
