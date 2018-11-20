@@ -26,6 +26,6 @@ type Wand {
 }
 
 enum LengthUnit {
-    METER
     INCH
+    CENTIMETER
 }
