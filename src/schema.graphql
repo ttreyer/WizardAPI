@@ -1,0 +1,31 @@
+type Query {
+    house(name: String): House
+    wizard(name: String): Wizard
+}
+
+type House {
+    name: String
+    animal: String
+    head: Wizard
+    points: Int
+    verse: String
+}
+
+type Wizard {
+    name: String
+    house: House
+    wand: Wand
+    totalChocolateFrogCards: Int
+    friends: [Wizard]
+}
+
+type Wand {
+    wood: String
+    core: String
+    length(unit: LengthUnit = INCH): Float
+}
+
+enum LengthUnit {
+    METER
+    INCH
+}
