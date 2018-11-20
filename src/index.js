@@ -1,6 +1,8 @@
 const { GraphQLServer } = require('graphql-yoga')
 const db = require('./wizard-db')
 
+const inchToCentimeter = (inches) => 2.54 * inches
+
 const resolvers = {
   Query: {
     house: (_, args) => db.houseByName(args.name),
@@ -18,7 +20,7 @@ const resolvers = {
   Wizard: {
     name: (wizard) => wizard.name,
     house: (wizard) => db.Houses[wizard.house],
-    wand: (wizard) => null, // TODO
+    wand: (wizard) => db.Wands[wizard.wand],
 
     totalChocolateFrogCards: (wizard) =>
       wizard.totalChocolateFrogCards,
@@ -28,7 +30,12 @@ const resolvers = {
   },
 
   Wand: {
-    // TODO
+    length: (wand, args) => {
+      switch (args.unit) {
+        case 'INCH': return wand.length
+        case 'CENTIMETER': return inchToCentimeter(wand.length)
+      }
+    }
   },
 }
 
